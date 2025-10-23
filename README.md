@@ -112,5 +112,16 @@ Le site du Club Tech doit devenir une plateforme vivante et collaborative, au se
 - Un tableau de bord d’activités
 - Une galerie de projets open source
 
+## L'équipe
+- **Product Owner (PO)**: [Abdoulaye Soumah](https://github.com/Soumah1)
+- **Scrum Master (SM)**: [Mariama Diané]()
 ### Membres de l'équipe de développement
-- ...
+- [Sosane Mahamoud Houssein](https://github.com/SOSANE)
+- [Vincent Godbout](https://github.com/gyoo18)
+- [Ramatoulaye Bah](https://github.com/RAMAbah224)
+- [Ciré]()
+---
+
+- **Test**: [Alpha Diallo]()
+- **Design**: [Aissatoubilly Diallo](), [Kader Bangoura]()
+- **Documentation**: [Amadou Diarouga Soumah](), [Kader Bangoura]()
