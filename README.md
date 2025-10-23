@@ -10,9 +10,24 @@ Suivre les guides suivants:
 - [Guide de déploiement](DEPLOYMENT.md)
 
 Documentation supplémentaire:
-- [Architecture du projet](docs/Architecture.md)
+- [Architecture du projet](docs/ARCHITECTURE.md)
 - [Endpoints du backend](docs/API.md)
-- [Ressources supplémentaires](docs/Ressources.md)
+- [Ressources supplémentaires](docs/RESSOURCES.md)
+
+## Table des matières
+- [Tech Stack](#tech-stack)
+- [Exécuter le projet](#exécuter-avec-docker)
+    - [Exécuter manuellement](#exécuter-manuellement)
+    - [Exécuter avec Docker](#exécuter-avec-docker)
+    - [Créer un super-utilisateur (superuser)](#créer-un-super-utilisateur-superuser)
+- [Pages principales](#pages-principales)
+- [Contraintes et exigences techniques](#contraintes-et-exigences-techniques)
+- [Contenu initial à fournir](#contenu-initial-à-fournir)
+- [Livrables attendus](#livrables-attendus)
+- [Vision long terme](#vision-long-terme)
+- [L'équipe](#léquipe)
+    - [Membres de l'équipe de développement](#membres-de-léquipe-de-développement)
+
 
 ## Tech Stack
 Liste des technologies utilisée, risque d'être modifiée:
