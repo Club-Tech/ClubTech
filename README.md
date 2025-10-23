@@ -1,6 +1,9 @@
 # Club tech - Site web officiel
 
-Projet de site web du club Tech.
+Le Club Tech est une association étudiante regroupant des passionnés d’informatique provenant de plusieurs pays différents. Le club vise à promouvoir la collaboration internationale, l’innovation technologique et le partage de connaissances au sein de la communauté universitaire.
+
+
+Actuellement, le club ne dispose pas d’un espace numérique centralisé pour communiquer, valoriser ses membres et partager ses activités. Le projet consiste donc à concevoir et développer le site officiel du Club Tech, vitrine du club et plateforme de communication interne et externe
 
 Suivre les guides suivants:
 - [Guide de contribution](CONTRIBUTING.md)
@@ -21,6 +24,48 @@ Liste des technologies utilisée, risque d'être modifiée:
 - Outils CI/CD: Github Actions
 - Containerisation: `Docker`
 - Reverse proxy + web server: `Nginx`
+
+## Exécuter le projet
+```sh
+git clone https://github.com/Club-Tech/ClubTech.git
+```
+```sh
+cd ClubTech
+```
+### Exécuter manuellement
+1. `backend`
+```sh
+cd backend
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+2. `frontend`
+```sh
+cd frontend
+npm install
+npm run dev
+```
+### Exécuter avec Docker
+...
+
+L'interface du `backend` est accessible sur http://localhost:8000/ (bientôt interface avec Swagger UI)
+![backend-interface](/docs/img/backend_interface.png)
+
+
+L'application principale, `frontend`, est accessible sur http://localhost:5173/
+![frontend-interface](/docs/img/frontend_interface.png)
+
+### Créer un super-utilisateur (superuser)
+```sh
+python manage.py createsuperuser
+```
+
+En accédant sur http://localhost:8000/admin, on peut se connecter sur le dashboard d'administrateur
+![backend-admin-login](/docs/img/backend_login_interface_admin.png)
+![backend-admin-interface](/docs/img/backend_interface_admin.png)
+
 
 ## Pages principales:
 
@@ -50,3 +95,22 @@ Liste des technologies utilisée, risque d'être modifiée:
 - Textes de présentation (mission, vision, valeurs)
 - Liste des événements prévus
 - Répertoire des projets étudiants récents
+
+## Livrables attendus
+1. Maquette visuelle (wireframes + design final)
+2. Prototype fonctionnel du site (version bêta)
+3. Version finale hébergée et accessible en ligne.
+4. Guide de mise à jour et maintenance pour les futurs membres.
+5. `README.md` (travail d’équipe et coordination)
+
+## Vision long terme
+Le site du Club Tech doit devenir une plateforme vivante et collaborative, au service de la communauté étudiante et des partenaires.
+
+À terme, il pourrait évoluer vers un espace membre connecté, intégrant :
+- Des profils personnels
+- Une messagerie interne
+- Un tableau de bord d’activités
+- Une galerie de projets open source
+
+### Membres de l'équipe de développement
+- ...
