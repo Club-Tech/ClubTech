@@ -1,4 +1,4 @@
-# Code de conduite pour le projet du llub Tech
+# Code de conduite pour le projet du Club Tech
 
 ## Notre engagement
 
