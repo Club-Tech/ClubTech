@@ -17,7 +17,6 @@ Documentation supplémentaire:
 ## Table des matières
 - [Tech Stack](#tech-stack)
 - [Exécuter le projet](#exécuter-avec-docker)
-    - [Exécuter manuellement](#exécuter-manuellement)
     - [Exécuter avec Docker](#exécuter-avec-docker)
     - [Créer un super-utilisateur (superuser)](#créer-un-super-utilisateur-superuser)
 - [Pages principales](#pages-principales)
@@ -47,25 +46,13 @@ git clone https://github.com/Club-Tech/ClubTech.git
 ```sh
 cd ClubTech
 ```
-### Exécuter manuellement
-1. `backend`
-```sh
-cd backend
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
 
-2. `frontend`
-```sh
-cd frontend
-npm install
-npm run dev
-```
 ### Exécuter avec Docker
-...
+```sh
+docker compose up -d
+```
 
-L'interface du `backend` est accessible sur http://localhost:8000/ (bientôt interface avec Swagger UI)
+L'interface (Swagger UI) du `backend` est accessible sur http://localhost:8000/
 ![backend-interface](/docs/img/backend_interface.png)
 
 
@@ -74,10 +61,13 @@ L'application principale, `frontend`, est accessible sur http://localhost:5173/
 
 ### Créer un super-utilisateur (superuser)
 ```sh
+docker compose exec -it backend bash
+```
+```sh
 python manage.py createsuperuser
 ```
 
-En accédant sur http://localhost:8000/admin, on peut se connecter sur le dashboard d'administrateur
+En accédant sur http://localhost:8000/api/admin, on peut se connecter sur le dashboard d'administrateur
 ![backend-admin-login](/docs/img/backend_login_interface_admin.png)
 ![backend-admin-interface](/docs/img/backend_interface_admin.png)
 
