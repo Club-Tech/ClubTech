@@ -1,6 +1,6 @@
 <h1 align="center">  <b>Club tech</b> - Site web officiel
 <br>
-<img width="24" height="24" alt="club-tech-logo"  src="/frontend/public/clubtech_logo.jpg" />
+<img width="44" height="44" alt="club-tech-logo" style="border-radius: 50%;" src="/frontend/public/clubtech_logo.jpg" />
 </h1>
 
 Le Club Tech est une association étudiante regroupant des passionnés d’informatique provenant de plusieurs pays différents. Le club vise à promouvoir la collaboration internationale, l’innovation technologique et le partage de connaissances au sein de la communauté universitaire.
@@ -77,15 +77,15 @@ En accédant sur http://localhost:8000/api/admin, on peut se connecter sur le da
 
 ## Pages principales:
 
-| Catégorie              | Fonctionnalité                         | Description                                                  |
-|------------------------|----------------------------------------|--------------------------------------------------------------|
-| Accueil                | Page de présentation du club           | Mission, vision, valeurs, chiffres clés                      |
-| Équipe                 | Présentation des membres               | Profils, photos, rôles, pays d’origine                       |
-| Événements             | Liste et détails des événements        | Agenda, inscriptions, affiches, comptes rendus               |
-| Blog Tech              | Articles techniques                    | Publications par les membres sur divers sujets informatiques |
-| Projets / Réalisations | Mise en avant des projets réalisés     | Détails techniques, captures d'écran, membres participants   |
-| Partenariats           | Présentation des partenaires officiels | Logos, descriptions, liens                                   |
-| Contact / Adhésion     | Formulaire de contact et d'adhésion    | Pour rejoindre le club ou devenir partenaire                 |
+| Catégorie              | Fonctionnalité                         | Description                                                  | URL                     |
+|------------------------|----------------------------------------|--------------------------------------------------------------|-------------------------|
+| Accueil                | Page de présentation du club           | Mission, vision, valeurs, chiffres clés                      | `/`                     |
+| Équipe                 | Présentation des membres               | Profils, photos, rôles, pays d’origine                       | `/equipe`               |
+| Événements             | Liste et détails des événements        | Agenda, inscriptions, affiches, comptes rendus               | `/evenement`            |
+| Blog Tech              | Articles techniques                    | Publications par les membres sur divers sujets informatiques | `/blog-tech`            |
+| Projets / Réalisations | Mise en avant des projets réalisés     | Détails techniques, captures d'écran, membres participants   | `/projets`              |
+| Partenariats           | Présentation des partenaires officiels | Logos, descriptions, liens                                   | `/partenaires`          |
+| Contact / Adhésion     | Formulaire de contact et d'adhésion    | Pour rejoindre le club ou devenir partenaire                 | `/contact`, `/adhesion` |
 
 
 ## Contraintes et exigences techniques
