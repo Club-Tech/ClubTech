@@ -1,0 +1,69 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+# Pipeline de base. Possibilité d'ajouter un test step dans le futur.
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build les containers
+        run: |
+          docker compose -d
+          sleep 30
+
+  quality_gate:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: (Backend) Analyse du code
+        uses: dciborow/action-pylint@0.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          workdir: backend
+          pylint_args: "--rcfile=.pylintrc"
+
+      - name: (Backend) Vérification du formatage
+        uses: reviewdog/action-black@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          workdir: backend
+          black_args: "--check ."
+          level: warning
+      
+      - name: Install dependencies
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        with:
+          node-version: "20"
+
+      - run: |
+          cd frontend
+          npm install eslint eslint-plugin-react-hooks eslint-plugin-react-refresh -D
+      
+      - name: (Frontend) Analyse du code
+        uses: reviewdog/action-eslint@2fee6dd72a5419ff4113f694e2068d2a03bb35dd # v1.33.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workdir: frontend
+          reporter: github-pr-review
+          level: warning
