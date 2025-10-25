@@ -1,4 +1,7 @@
-# Club tech - Site web officiel
+<h1>  Club tech - Site web officiel
+<br>
+<img width="24" height="24" alt="club-tech-logo"  src="/frontend/public/clubtech_logo.jpg" />
+</h1>
 
 Le Club Tech est une association étudiante regroupant des passionnés d’informatique provenant de plusieurs pays différents. Le club vise à promouvoir la collaboration internationale, l’innovation technologique et le partage de connaissances au sein de la communauté universitaire.
 
@@ -30,8 +33,8 @@ Documentation supplémentaire:
 
 ## Tech Stack
 Liste des technologies utilisée, risque d'être modifiée:
-- Backend & API: `Django` 5.x (`Python`), `DjangoRestFramework` (avec `drf-spectacular`)
-- Base de données: ...
+- Backend & API: `Django` 5.2 (`Python`), `DjangoRestFramework` (avec `drf-spectacular`)
+- Base de données: `PostgreSQL`
 - Frontend: `React` (Styling avec `TailwindCSS`, `shadcn`)
 - Frontend testing: `Vitest` + React Testing Library
 - Backend testing: Django's `TestCase`/DRF's `APITestCase`
