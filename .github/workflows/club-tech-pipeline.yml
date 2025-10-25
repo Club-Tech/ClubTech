@@ -20,7 +20,7 @@ jobs:
 
       - name: Build les containers
         run: |
-          docker compose -d
+          docker compose up -d
           sleep 30
 
   quality_gate:
