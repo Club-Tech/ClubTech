@@ -30,7 +30,7 @@ Le schéma de la base de donnée n'est pas encore déterminée, mais pour implé
     - `description_complete` - `TextField`, représente les détails de l'événement.
     - `date_debut` - `DateTimeField` représente la date de début
     - `date_fin` - `DateTimeField` représente la date de fin
-    - `affiche` - `ImageField`, représente l'image de l'évènement
+    - `image` - `ImageField`, représente l'image de l'évènement
     - `lien_inscription` - `URLField`, représente le lien du formulaire pour l'inscription *
 
 - Table `CompteRendu` (pour les rapports post-évènements, lié à un `Evenement` spécifique)
@@ -44,7 +44,7 @@ Le schéma de la base de donnée n'est pas encore déterminée, mais pour implé
     - `nom` - `CharField`, représente le nom du projet en question
     - `description_courte` - `CharField`, représente un petit résumé
     - `description_detaillee` - `TextField`, représente un texte qui décrit les défis, solutions et résultats
-    - `image_principale` - `ImageField` représente l'image du projet
+    - `image` - `ImageField` représente l'image du projet
     - `lien_demo` - `URLField` représente le lien du projet/démo associé/dépôt github (peut être `null`) *
  
 
@@ -52,7 +52,7 @@ Le schéma de la base de donnée n'est pas encore déterminée, mais pour implé
     - `nom` - `CharField`, représente le nom du partenaire (association/compagnie)
     - `logo` - `URLField` (ou `ImageField`), représente le logo/image du partenaire
     - `description` - `CharField`, représente une petite description du partenaire
-    - `site` - `ForeignKey` vers ``, représente les liens du partenaire
+    - `site` - `ForeignKey` vers `ParametreSite`, représente les liens du partenaire
 
 ### ...
 - Table `CategorieArticle` (pour les articles)
@@ -65,5 +65,6 @@ Le schéma de la base de donnée n'est pas encore déterminée, mais pour implé
 
 - Table `Tag` ?
     - peut être un `ForeignKey` pour `Projet` (avec `nom` ex. `Python`, `Git`, etc. et `slug`)
+
 ## Diagramme mermaid
 ...
