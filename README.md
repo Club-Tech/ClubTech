@@ -1,4 +1,4 @@
-<h1>  Club tech - Site web officiel
+<h1 align="center">  <b>Club tech</b> - Site web officiel
 <br>
 <img width="24" height="24" alt="club-tech-logo"  src="/frontend/public/clubtech_logo.jpg" />
 </h1>
