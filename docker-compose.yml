@@ -1,0 +1,61 @@
+# Developpement
+services:
+  # Base de données PostgreSQL
+  db:
+    restart: always
+    container_name: clubtech_db
+    image: postgres:14.19-alpine3.21
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  # Backend Django
+  backend:
+    container_name: clubtech_backend
+    build: ./backend
+    volumes:
+      - ./backend/:/backend
+    working_dir: /backend
+    environment:
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 8000:8000
+  # Frontend React
+  frontend:
+    container_name: clubtech_frontend
+    volumes:
+      - ./frontend:/home/node
+      - /home/node/node_modules
+    build: ./frontend
+    working_dir: /home/node
+    environment:
+      - CHOKIDAR_USEPOLLING=True
+  # Nginx reverse proxy
+  nginx:
+    container_name: clubtech_nginx
+    build: ./nginx
+    volumes:
+      - ./nginx/nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - 5173:8080
+volumes:
+  postgres_data:
