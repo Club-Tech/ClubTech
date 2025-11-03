@@ -18,8 +18,21 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import re_path
+from django.urls import re_path, include
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.api.v2.views import PagesAPIViewSet
+from wagtail.api.v2.router import WagtailAPIRouter
+from wagtail.images.api.v2.views import ImagesAPIViewSet
+from wagtail.documents.api.v2.views import DocumentsAPIViewSet
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+api_router = WagtailAPIRouter("wagtailapi")
+
+api_router.register_endpoint("pages", PagesAPIViewSet)
+api_router.register_endpoint("images", ImagesAPIViewSet)
+api_router.register_endpoint("documents", DocumentsAPIViewSet)
 
 urlpatterns = [
     re_path(
@@ -27,4 +40,8 @@ urlpatterns = [
     ),
     re_path(r"^api/schema/", SpectacularAPIView.as_view(), name="schema"),
     re_path(r"^api/admin/", admin.site.urls),
+    re_path(r"^api/v2/", api_router.urls),
+    re_path(r"^api/cms/", include(wagtailadmin_urls)),
+    re_path(r"^api/documents/", include(wagtaildocs_urls)),
+    re_path(r"^api/pages/", include(wagtail_urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

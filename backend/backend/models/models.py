@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from wagtail.models import Page
+from wagtail.fields import RichTextField
+from wagtail.admin.panels import FieldPanel
+from wagtail.search import index
 
 
 # Create your models here.
