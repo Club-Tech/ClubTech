@@ -1,9 +1,12 @@
-from backend.models.models import Membre
+"""
+Serializers pour le modèle des membres
+"""
+
 from rest_framework import serializers
+from backend.models.models import Membre
 
 
 class MembreSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Membre
         fields = [

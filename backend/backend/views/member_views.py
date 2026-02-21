@@ -1,3 +1,7 @@
+"""
+Views pour le modèle des membres
+"""
+
 from rest_framework import viewsets
 from backend.models.models import Membre
 from backend.serializers.member_serializers import MembreSerializer
