@@ -22,9 +22,11 @@ from django.urls import include, re_path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework import routers
 from backend.views.member_views import MembreViewSet
+from backend.views.projet_views import ProjetViewSet
 
 router = routers.DefaultRouter()
 router.register(r"membres", MembreViewSet)
+router.register(r"projets", ProjetViewSet)
 
 urlpatterns = [
     re_path(
