@@ -18,8 +18,15 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import re_path
+from django.urls import include, re_path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from rest_framework import routers
+from backend.views.member_views import MembreViewSet
+from backend.views.projet_views import ProjetViewSet
+
+router = routers.DefaultRouter()
+router.register(r"membres", MembreViewSet)
+router.register(r"projets", ProjetViewSet)
 
 urlpatterns = [
     re_path(
@@ -27,4 +34,5 @@ urlpatterns = [
     ),
     re_path(r"^api/schema/", SpectacularAPIView.as_view(), name="schema"),
     re_path(r"^api/admin/", admin.site.urls),
+    re_path(r"^api/", include(router.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
