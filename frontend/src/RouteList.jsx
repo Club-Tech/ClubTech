@@ -9,6 +9,10 @@ import EvenementPage from "./pages/EvenementsPage";
 import PartenariatsPage from "./pages/PartenariatsPage";
 import ProjetsPage from "./pages/ProjetsPage";
 import Erreur404Page from "./pages/Erreur404Page";
+import MentionsLegalesPage from "./pages/MentionsLegalesPage";
+import CookiesPage from "./pages/CookiesPage";
+import PolitiqueConfidentialitePage from "./pages/PolitiqueConfidentialitePage";
+import ConditionsGeneralesPage from "./pages/ConditionsGeneralesPage";
 
 export function RouteList() {
   return (
@@ -21,6 +25,10 @@ export function RouteList() {
       <Route path={PATH.evenement} element={<EvenementPage />} />
       <Route path={PATH.partenariats} element={<PartenariatsPage />} />
       <Route path={PATH.projets} element={<ProjetsPage />} />
+      <Route path={PATH.conditionsGenerales} element={<ConditionsGeneralesPage />} />
+      <Route path={PATH.politiqueConfidentialite} element={<PolitiqueConfidentialitePage />} />
+      <Route path={PATH.cookies} element={<CookiesPage />} />
+      <Route path={PATH.mentionsLegales} element={<MentionsLegalesPage />} />
 
       <Route path={PATH.pageIntrouvable} element={<Erreur404Page />} />
     </Routes>

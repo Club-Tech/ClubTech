@@ -7,6 +7,10 @@ export const PATH = {
   contact: "/contact",
   adhesion: "/adhesion",
   blogtech: "/blog-tech",
+  conditionsGenerales: "/conditions-generales",
+  politiqueConfidentialite: "/politique-confidentialite",
+  mentionsLegales: "/mention-legales",
+  cookies: "/cookies",
   pageIntrouvable: "*",
 };
 

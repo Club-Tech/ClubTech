@@ -1,8 +1,48 @@
 export const RESSOURCES = {
   clubtech: "Club Tech",
 
-  header: {},
-  footer: {},
+  header: {
+    titreNavbar: {
+      projet: "Projet",
+      equipe: "Équipe",
+      partenariats: "Partenariats",
+      evenement: "Événements",
+      blogtech: "Blog",
+      contactButton: "Contact",
+      adhesionButton: "S'inscrire",
+    },
+  },
+  footer: {
+    infoReseaux: {
+      adresseColonne: {
+        label: "Adresse",
+        adresse: "À venir...",
+      },
+      contactColonne: {
+        label: "Contact",
+        contactNumber: "À venir...",
+        contactEmail: "clubtechinf2025@gmail.com",
+      },
+    },
+    lienRapide: {
+      acceuil: "Accueil",
+      projet: "Projets",
+      equipe: "Équipe",
+      partenariats: "Partenariats",
+      evenement: "Événements",
+      blogtech: "Blog Tech",
+      contact: "Contact",
+      adhesion: "Adhésion",
+      mentionsLegales: "Mentions légales",
+      politiqueConfidentialite: "Politique confidentialité",
+    },
+    lienDeFond: {
+      labelCopyright: "© 2026 Club Tech. Tous droits réservés",
+      politiqueConfidentialite: "Politique de confidentialité",
+      conditionsGenerales: "Conditions générales",
+      parametresCookies: "Paramètres des cookies",
+    },
+  },
 
   accueil: {
     titre: "Le club Tech",
@@ -17,7 +57,7 @@ export const RESSOURCES = {
     titre: "Nos projets et réalisations",
   },
   evenement: {
-    titre: "Évènements",
+    titre: "Événements",
   },
   contact: {
     titre: "Contactez-nous",
@@ -27,6 +67,18 @@ export const RESSOURCES = {
   },
   blogtech: {
     titre: "Blog Tech",
+  },
+  conditionGenerales: {
+    titre: "Conditions générales",
+  },
+  politiqueConfidentialite: {
+    titre: "Nos politiques de confidentialité",
+  },
+  mentionsLegales: {
+    titre: "Mentions légales",
+  },
+  cookies: {
+    titre: "Cookies",
   },
   erreur404: {
     titre: "Erreur 404, page introuvable.",
